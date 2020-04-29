@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text_news" type="id" />
+    <item name="text_moodtrack" type="id" />
+    <item name="text_add" type="id" />
+    <item name="text_profile" type="id" />
+    <item name="navigation_profile" type="id" />
+</resources>
