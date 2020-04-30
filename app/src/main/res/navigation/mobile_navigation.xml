@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_profile">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -14,24 +14,25 @@
     <fragment
         android:id="@+id/navigation_moodtrack"
         android:name="sv.ugm.komsi.svasthy.ui.moodtrack.MoodtrackFragment"
-        android:label="Mood Track"
+        android:label="@string/title_moodtrack"
         tools:layout="@layout/fragment_moodtrack" />
 
     <fragment
         android:id="@+id/navigation_add"
         android:name="sv.ugm.komsi.svasthy.ui.add.AddFragment"
+        android:label="@string/title_add"
         tools:layout="@layout/fragment_add" />
 
     <fragment
         android:id="@+id/navigation_news"
         android:name="sv.ugm.komsi.svasthy.ui.news.NewsFragment"
-        android:label="News"
+        android:label="@string/title_news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="sv.ugm.komsi.svasthy.ui.profile.ProfileFragment"
-        android:label="News"
-        tools:layout="@layout/fragment_news" />
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>
