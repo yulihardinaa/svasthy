@@ -86,7 +86,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                />
 
             <TextView
                 style="@style/parent"
