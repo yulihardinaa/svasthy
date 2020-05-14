@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#FEF7E7"
     tools:context=".Reminder">
 
     <RelativeLayout
@@ -31,14 +31,7 @@
                 android:layout_alignParentStart="true"
                 android:src="@drawable/icon_back" />
 
-            <ImageView
-                android:id="@+id/icon_tiga_bulat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_bulat_tiga" />
-
-        </RelativeLayout>
+    </RelativeLayout>
 
         <TextView
             android:id="@+id/txtReminder"
@@ -49,7 +42,7 @@
             android:layout_marginTop="20dp"
             android:text="Reminder"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/nunito_semibold" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -86,7 +79,7 @@
                 android:text="08:00"
                 android:textColor="@color/warnaFont"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/nunito_semibold" />
 
             <View
                 android:id="@+id/garis_atas"
@@ -109,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Breakfast"
-                android:textStyle="bold"
+                android:fontFamily="@font/nunito_semibold"
                 android:textSize="20sp"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="25dp"
@@ -125,6 +118,7 @@
                 android:layout_below="@id/title_list"
                 android:layout_toEndOf="@id/image_list_obat"
                 android:layout_marginStart="25dp"
+                android:fontFamily="@font/nunito_light"
                 />
 
             <View
@@ -161,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:text="one bowl of cereal"
                 android:textSize="16sp"
+                android:fontFamily="@font/nunito_light"
                 android:layout_below="@id/title_list_bulatbir"
                 android:layout_toEndOf="@id/image_list_bulat_biru"
                 android:layout_marginStart="25dp"
@@ -175,112 +170,6 @@
                 android:background="@color/warnaGaris" />
 
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/list_item_reminder_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/list_item_reminder_1"
-            >
-
-            <TextView
-                android:id="@+id/list_time_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="08:00"
-                android:textColor="@color/warnaFont"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <View
-                android:id="@+id/garis_atas_2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/list_time_2"
-                android:layout_marginTop="12dp"
-                android:background="@color/warnaGaris" />
-
-            <ImageView
-                android:id="@+id/image_list_obat_2"
-                android:layout_width="42dp"
-                android:layout_height="35dp"
-                android:layout_below="@id/garis_atas_2"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/obat" />
-
-            <TextView
-                android:id="@+id/title_list_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Breakfast"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-                android:layout_below="@id/garis_atas_2"
-                android:layout_toEndOf="@id/image_list_obat_2"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="one bowl of cereal"
-                android:textSize="16sp"
-                android:layout_below="@id/title_list_2"
-                android:layout_toEndOf="@id/image_list_obat_2"
-                android:layout_marginStart="25dp"
-                />
-
-            <View
-                android:id="@+id/garis_bawah_2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/image_list_obat_2"
-                android:layout_marginTop="20dp"
-                android:background="@color/warnaGaris" />
-
-            <ImageView
-                android:id="@+id/image_list_bulat_biru_2"
-                android:layout_width="42dp"
-                android:layout_height="35dp"
-                android:layout_below="@id/garis_bawah_2"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/bulatbiru" />
-
-            <TextView
-                android:id="@+id/title_list_bulatbir_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Breakfast"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-                android:layout_below="@id/garis_bawah_2"
-                android:layout_toEndOf="@id/image_list_bulat_biru_2"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="one bowl of cereal"
-                android:textSize="16sp"
-                android:layout_below="@id/title_list_bulatbir_2"
-                android:layout_toEndOf="@id/image_list_bulat_biru_2"
-                android:layout_marginStart="25dp"
-                />
-
-            <View
-                android:id="@+id/garis_paling_bawah_2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@id/image_list_bulat_biru_2"
-                android:layout_marginTop="20dp"
-                android:background="@color/warnaGaris" />
-
-        </RelativeLayout>
-
 
     </RelativeLayout>
 

@@ -1,8 +1,10 @@
 package sv.ugm.komsi.svasthy;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.RemoteViews;
 
 /**
@@ -16,9 +18,27 @@ public class MoodWidget extends AppWidgetProvider {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.mood_widget);
 
+
+
+        Intent intentUpdate = new Intent(context, MoodWidget.class);
+        intentUpdate.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        int[] idArray = new int[]{appWidgetId};
+        intentUpdate.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,idArray);
+
+
+        Intent intent = new Intent(context,Main2Activity.class);
+        PendingIntent pendingIntent=PendingIntent.getActivity(context,0,intent,0);
+        views.setOnClickPendingIntent(R.id.mood_1,pendingIntent);
+        views.setOnClickPendingIntent(R.id.mood_2,pendingIntent);
+        views.setOnClickPendingIntent(R.id.mood_3,pendingIntent);
+        views.setOnClickPendingIntent(R.id.mood_4,pendingIntent);
+        views.setOnClickPendingIntent(R.id.mood_5,pendingIntent);
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
+
+
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {

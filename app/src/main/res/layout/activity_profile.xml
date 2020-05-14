@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF7E7">
     <RelativeLayout
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,13 +24,13 @@
             android:layout_marginTop="26dp"
             android:text="Profile"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/nunito_semibold" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/gabungan" />
+            android:background="@drawable/ic_bg_profile" />
 
     </RelativeLayout>
 
@@ -42,13 +44,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/imageUser"
             android:layout_width="130dp"
-            android:layout_height="151dp"
+            android:layout_height="130dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:background="@drawable/shinjuku" />
+            app:civ_border_width="1dp"
+            android:src="@mipmap/ic_background_profile"
+            />
 
         <TextView
             android:id="@+id/userName"
@@ -95,8 +100,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/nut" />
 
             <TextView
@@ -121,8 +126,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/information" />
 
             <TextView
@@ -147,8 +152,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/accept_1" />
 
             <TextView

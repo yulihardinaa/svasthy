@@ -42,5 +42,6 @@ dependencies {
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
     //noinspection GradleCompatible
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }
