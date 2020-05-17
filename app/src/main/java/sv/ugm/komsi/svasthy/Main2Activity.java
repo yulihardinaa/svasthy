@@ -33,13 +33,13 @@ public class Main2Activity extends AppCompatActivity {
                     fragment = new FragmentHome();
                     break;
                 case R.id.navigation_moodtrack:
-                    fragment = new FragmentHome();
+                    fragment = new FragmentMoodTrack();
                     break;
                 case R.id.navigation_news:
-                    fragment = new FragmentHome();
+                    fragment = new FragmentNews();
                     break;
                 case R.id.navigation_profile:
-                    fragment = new FragmentHome();
+                    fragment = new FragmentProfile();
                     break;
             }
             return loadFragment(fragment);

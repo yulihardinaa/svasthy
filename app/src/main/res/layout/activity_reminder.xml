@@ -66,6 +66,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+        </ScrollView>
         <RelativeLayout
             android:id="@+id/list_item_reminder_1"
             android:layout_width="match_parent"

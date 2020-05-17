@@ -1,22 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
-
-    <TextView
-        android:id="@+id/text_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    android:background="#FEF7E7">
+    <RelativeLayout
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/TopProfileSection"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/warnaOrange"
+
+        >
+
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="26dp"
+            android:text="Profile"
+            android:textSize="30sp"
+            android:fontFamily="@font/nunito_semibold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_bg_profile" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ProfileDataUser"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="155dp"
+        android:background="@drawable/custome_background_profile_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageUser"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:civ_border_width="1dp"
+            android:src="@mipmap/ic_background_profile"
+            />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Fadhilah"
+            android:textColor="@color/warnaFont"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/EditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:drawableEnd="@drawable/edit"
+            android:drawablePadding="5dp"
+            android:text="edit"
+            android:textColor="@color/WarnaFontAbu"
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/garis"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/EditProfile"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="45dp"
+            android:background="@color/warnaGaris" />
+
+        <LinearLayout
+            android:id="@+id/menuPengaturan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/garis"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="45dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/nut" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:text="Pengaturan"
+                android:textColor="@color/warnaFont"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menuBantuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menuPengaturan"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="45dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/information" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:text="Bantuan"
+                android:textColor="@color/warnaFont"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menuSyarat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menuBantuan"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="45dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/accept_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:text="Syarat dan Ketentuan"
+                android:textColor="@color/warnaFont"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
