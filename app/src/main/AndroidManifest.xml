@@ -10,9 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2" />
+
+        <receiver android:name=".MoodWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/mood_widget_info" />
+        </receiver>
+
+        <activity
             android:name=".activity_home"
             android:label="@string/title_activity_home" />
-        <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

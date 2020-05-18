@@ -36,7 +36,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_register_logo"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    />
             </RelativeLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -97,6 +98,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:src="@drawable/ic_register"
+                        android:clickable="true"
 
                         />
 
