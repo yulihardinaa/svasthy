@@ -5,4 +5,6 @@
     <item name="text_add" type="id" />
     <item name="text_profile" type="id" />
     <item name="navigation_profile" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="app_bar" type="id" />
 </resources>

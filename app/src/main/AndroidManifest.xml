@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity_confideroom"
+            android:label="@string/title_activity_confideroom"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".activity_home"
-            android:label="@string/title_activity_home"></activity>
+            android:label="@string/title_activity_home" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
