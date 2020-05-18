@@ -10,10 +10,4 @@
     <string name="title_profile">Profile</string>
     <string name="header_moodtrack">How Would You Describe Your Mood?</string>
     <string name="title_add" />
-    <string name="title_activity_bottom">BottomActivity</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="title_activity_main2">Main2Activity</string>
-
 </resources>

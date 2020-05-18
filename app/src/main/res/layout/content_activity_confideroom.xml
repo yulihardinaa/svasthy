@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity_confideroom"
+    tools:showIn="@layout/activity_confideroom"
+    android:background="#FEF7E7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Confide"
+            android:textStyle="bold"
+            android:textSize="18dp">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-118dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/card">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-386dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="260dp"
+            android:src="@drawable/card1">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-386dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="450dp"
+            android:src="@drawable/card2">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-386dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="650dp"
+            android:src="@drawable/card3">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
