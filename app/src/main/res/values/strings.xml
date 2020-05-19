@@ -11,4 +11,5 @@
     <string name="header_moodtrack">How Would You Describe Your Mood?</string>
     <string name="title_add" />
     <string name="title_activity_main2">Svasthy</string>
+    <string name="action_settings">More</string>
 </resources>
