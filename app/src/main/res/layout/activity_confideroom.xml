@@ -30,7 +30,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginTop="80dp"
-                android:src="@drawable/search"
+                android:src="@drawable/ic_search"
                 android:scaleType="fitCenter">
 
             </ImageView>
@@ -90,7 +90,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_margin="5dp"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="top|end"/>
 
