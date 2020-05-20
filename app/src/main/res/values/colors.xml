@@ -23,4 +23,11 @@
     <color name="warnaGaris">#E5E5E5</color>
     <color name="WarnaBackgroundReminder">#FBCC80</color>
 
+<!--    Warna mood-->
+    <color name="num_1" >#FF1E32</color>
+    <color name="num_2" >#FF823E</color>
+    <color name="num_3" >#F1C526</color>
+    <color name="num_4" >#49C9E2</color>
+    <color name="num_5" >#3C88E0</color>
+
 </resources>
