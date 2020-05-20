@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "670245381706",
+    "firebase_url": "https://svasthy-1187f.firebaseio.com",
+    "project_id": "svasthy-1187f",
+    "storage_bucket": "svasthy-1187f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670245381706:android:068e8ce95be54f99e1e8b3",
+        "android_client_info": {
+          "package_name": "sv.ugm.komsi.svasthy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670245381706-og7s3h067jdnn03apiiscom13joa71rn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sv.ugm.komsi.svasthy",
+            "certificate_hash": "c720c859ba0695d162f78b11f9afb4f446bf9c03"
+          }
+        },
+        {
+          "client_id": "670245381706-k8e25cv402ivj2ktr5i9oqkgemih6u6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJRHdsSpNsmdqOvufyys3xzAKN4rUtA14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670245381706-k8e25cv402ivj2ktr5i9oqkgemih6u6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
