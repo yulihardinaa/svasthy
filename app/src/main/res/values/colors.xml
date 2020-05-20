@@ -6,6 +6,7 @@
     <color name="colorAccent">#ffb74d</color>
     <color name="darkTextColor">#555555</color>
     <color name="themeColor">#F79514</color>
+    <color name="themeColorLight">#FEF7E7</color>
 
 
     <!--colors for light mode-->
