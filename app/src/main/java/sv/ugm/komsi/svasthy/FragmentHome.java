@@ -27,6 +27,10 @@ import androidx.annotation.IntRange;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationServices;
+
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
@@ -36,6 +40,7 @@ import java.util.ArrayList;
 public class FragmentHome extends Fragment {
     View view;
 
+
     public FragmentHome() {
 
     }
@@ -43,6 +48,7 @@ public class FragmentHome extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
 
     }
 

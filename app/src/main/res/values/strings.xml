@@ -12,4 +12,6 @@
     <string name="title_add" />
     <string name="title_activity_main2">Svasthy</string>
     <string name="action_settings">More</string>
+    <string name="address_text">"Address: %1$s \n Timestamp: %2$tr"</string>
+    <string name="loading">Loading…</string>
 </resources>

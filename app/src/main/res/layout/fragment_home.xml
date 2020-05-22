@@ -26,7 +26,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
         <TextView
             style="@style/viewParent.headerText.NoMode"
@@ -36,6 +38,15 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito_semibold"
             android:text="Hey, Fadhilah!" />
+        <TextView
+            android:id="@+id/address_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_light"
+            android:text="Jalan X" />
+
 
     </LinearLayout>
 
