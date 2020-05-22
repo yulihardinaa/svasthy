@@ -29,12 +29,9 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
 
     Context mContext;
     int fragID;
-    private TextView mLocationTextView;
-    private static  final int REQUEST_LOCATION_PERMISSION=1;
-    private static final String TRACKING_LOCATION_KEY = "tracking_location";
+
     private FusedLocationProviderClient mFusedLocationClient;
-    private LocationCallback mLocationCallback;
-    private  boolean mTrackingLocation;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -66,10 +63,8 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        mLocationTextView=findViewById(R.id.address_home);
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        getLocation();
+
         int fragmentId = getIntent().getIntExtra("FRAGMENT_ID", 0);
 
         if (fragmentId == 0) {
@@ -94,18 +89,7 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
             navigation.setSelectedItemId(R.id.navigation_profile);
         }
 
-        if (savedInstanceState != null) {
-            mTrackingLocation = savedInstanceState.getBoolean(
-                    TRACKING_LOCATION_KEY);
-        }
 
-        mLocationCallback = new LocationCallback(){
-            @Override
-            public  void onLocationResult(LocationResult locationResult){
-                new FetchAddressHome(Main2Activity.this,Main2Activity.this)
-                        .execute(locationResult.getLastLocation());
-            }
-        };
     }
 
 
@@ -119,58 +103,10 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
         return false;
     }
 
-    private void getLocation() {
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]
-                    {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
-        } else {
-//
-            mTrackingLocation = true;
-            mFusedLocationClient.requestLocationUpdates
-                    (getLocationRequest(),
-                            mLocationCallback,
-                            null /* Looper */);
-            mLocationTextView.setText(getString(R.string.address_text,
-                    getString(R.string.loading),
-                    System.currentTimeMillis()));
-
-        }
-    }
-    private LocationRequest getLocationRequest(){
-        LocationRequest locationRequest =new LocationRequest();
-        locationRequest.setInterval(10000);
-        locationRequest.setFastestInterval(5000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        return locationRequest;
-    }
-
-    public  void onRequestPermissionResult(int requestCode,
-                                           @NonNull String[] permission,
-                                           @NonNull int[] grantResult){
-        switch (requestCode){
-            case REQUEST_LOCATION_PERMISSION:
-                if(grantResult.length>0&&grantResult[0]==PackageManager.PERMISSION_GRANTED){
-                    getLocation();
-                }else{
-                    Toast.makeText(this, "Permission Denied!",
-                            Toast.LENGTH_SHORT).show();
-                }
-                break;
-        }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState){
-        outState.putBoolean(TRACKING_LOCATION_KEY,mTrackingLocation);
-        super.onSaveInstanceState(outState);
-    }
-
     @Override
     public void onTaskCompleted(String result) {
-        if(mTrackingLocation){
-            mLocationTextView.setText(getString
-                    (R.string.address_text,result,System.currentTimeMillis()));
-        }
+
     }
 }
+
+
