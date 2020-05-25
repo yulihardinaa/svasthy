@@ -36,10 +36,11 @@ public class LoginActivity extends AppCompatActivity {
         email=etEmailLog.getText().toString();
         password=etPasswordLog.getText().toString();
         btnLogin=findViewById(R.id.cirLoginButton);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LogIn(email,password);
+                login(email,password);
 
             }
         });
@@ -81,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
    }
-   private  void LogIn(String email,String password){
+   private boolean login(String email, String password){
        mAuth.signInWithEmailAndPassword(email, password)
                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                    @Override
@@ -90,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                            // Sign in success, update UI with the signed-in user's information
                            Log.d("TAG", "signInWithEmail:success");
                            FirebaseUser user = mAuth.getCurrentUser();
+
 
                            updateUI(user);
                        } else {
@@ -103,6 +105,10 @@ public class LoginActivity extends AppCompatActivity {
                        // ...
                    }
                });
+       return false;
    }
 
-}
+  }
+
+
+

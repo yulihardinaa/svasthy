@@ -53,8 +53,7 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+
 
 
         int fragmentId = getIntent().getIntExtra("FRAGMENT_ID", 0);

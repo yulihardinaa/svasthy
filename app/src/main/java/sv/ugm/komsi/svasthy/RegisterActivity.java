@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity  {
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Register(email,password);
+                register(email,password);
             }
         });
 
@@ -56,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity  {
             window.setStatusBarColor(getResources().getColor(R.color.register_bk_color));
         }
     }
-    private void Register(String email,String password){
+    private void register(String email,String password){
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
