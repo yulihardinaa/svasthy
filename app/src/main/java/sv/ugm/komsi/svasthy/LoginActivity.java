@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login(email,password);
+                login(etEmailLog.getText().toString(),etPasswordLog.getText().toString());
 
             }
         });

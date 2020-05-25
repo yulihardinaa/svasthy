@@ -21,33 +21,34 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class RegisterActivity extends AppCompatActivity  {
+public class RegisterActivity extends AppCompatActivity {
+    private String TAG = "TestingSvasthy";
 
     private FirebaseAuth mAuth;
     ImageView mBtnRegister;
-    String email,password;
-    EditText etEmail,etPassword;
+    String email, password;
+    EditText etEmail, etPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         changeStatusBarColor();
         mAuth = FirebaseAuth.getInstance();
-        etEmail=findViewById(R.id.editTextEmail);
-        etPassword=findViewById(R.id.editTextPassword);
-
-        password=etPassword.getText().toString();
+        etEmail = findViewById(R.id.editTextEmail);
+        etPassword = findViewById(R.id.editTextPassword);
         email = etEmail.getText().toString();
-        mBtnRegister=findViewById(R.id.cirRegisterButton);
+        password = etPassword.getText().toString();
+        mBtnRegister = findViewById(R.id.cirRegisterButton);
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                register(email,password);
+                register(etEmail.getText().toString(), etPassword.getText().toString());
             }
         });
 
-
     }
+
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -56,8 +57,9 @@ public class RegisterActivity extends AppCompatActivity  {
             window.setStatusBarColor(getResources().getColor(R.color.register_bk_color));
         }
     }
-    private void register(String email,String password){
 
+    private void register(String email, String password) {
+        Log.d(TAG, "register: " + email + "password : " + password);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -84,13 +86,11 @@ public class RegisterActivity extends AppCompatActivity  {
 
     }
 
-    public void onLoginClick(View view){
-        startActivity(new Intent(this,LoginActivity.class));
-        overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
+    public void onLoginClick(View view) {
+        startActivity(new Intent(this, LoginActivity.class));
+        overridePendingTransition(R.anim.slide_in_left, android.R.anim.slide_out_right);
 
     }
-
-
 
 
 }
