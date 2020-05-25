@@ -22,29 +22,32 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    EditText etEmail, etPassword;
+    EditText etEmailLog, etPasswordLog;
     ImageView btnLogin;
     String email,password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        etEmail=findViewById(R.id.editTextEmailLog);
-        etPassword=findViewById(R.id.editTextPasswordLog);
-        email=etEmail.getText().toString();
-        password=etPassword.getText().toString();
+        etEmailLog=findViewById(R.id.editTextEmailLog);
+        etPasswordLog=findViewById(R.id.editTextPasswordLog);
+        email=etEmailLog.getText().toString();
+        password=etPasswordLog.getText().toString();
         btnLogin=findViewById(R.id.cirLoginButton);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LogIn(email,password);
+
             }
         });
         //for changing status bar icon colors
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
-        setContentView(R.layout.activity_login);
+
 
         ImageView cirLoginButton = findViewById(R.id.cirLoginButton);
         cirLoginButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                            // Sign in success, update UI with the signed-in user's information
                            Log.d("TAG", "signInWithEmail:success");
                            FirebaseUser user = mAuth.getCurrentUser();
+
                            updateUI(user);
                        } else {
                            // If sign in fails, display a message to the user.
