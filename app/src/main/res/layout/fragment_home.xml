@@ -37,7 +37,7 @@
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito_semibold"
-            android:text="Hey, Fadhilah!" />
+            android:text="Hey, How Are You?" />
         <TextView
             android:id="@+id/address_home"
             android:layout_width="wrap_content"

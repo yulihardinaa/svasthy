@@ -1,40 +1,26 @@
 package sv.ugm.komsi.svasthy;
 
-import android.Manifest;
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Main2Activity extends AppCompatActivity implements FetchAddressHome.OnTaskCompleted {
 
@@ -47,7 +33,7 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
     private static final int NOTIFICATION_ID=0;
     private static final String ACTION_UPDATE_NOTIFICATION="sv.ugm.komsi.svasthy.ACTION_UPDATE_NOTIFICATION";
     private static final String ACTION_CANCEL_NOTIFICATION="sv.ugm.komsi.svasthy.ACTION_CANCEL_NOTIFICATION";
-
+    private FirebaseAuth mAuth;
 
 
 
@@ -81,6 +67,9 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
         mNotifyButton=(Button)findViewById(R.id.button_notify);
 
         mNotifyManager=(NotificationManager)
@@ -90,12 +79,12 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
         intentFilter.addAction(ACTION_UPDATE_NOTIFICATION);
         intentFilter.addAction(ACTION_CANCEL_NOTIFICATION);
         registerReceiver(mReciever,intentFilter);
-        mNotifyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendNotification();
-            }
-        });
+//        mNotifyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                sendNotification();
+//            }
+//        });
 
         int fragmentId = getIntent().getIntExtra("FRAGMENT_ID", 0);
 
@@ -175,6 +164,17 @@ public class Main2Activity extends AppCompatActivity implements FetchAddressHome
     }
     @Override
     public void onTaskCompleted(String result) {
+
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    private void updateUI(FirebaseUser currentUser) {
 
     }
 
